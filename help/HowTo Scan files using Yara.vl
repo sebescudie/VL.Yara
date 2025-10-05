@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" xmlns:r="reflection" Id="JnFMdXeyFvoQZ2Pf2Fw0hX" LanguageVersion="2025.7.1-0013-g8fcece0df9" Version="0.128">
+  <NugetDependency Id="BCEJmpS0i7dQVmHO8rAylS" Location="VL.CoreLib" Version="2025.7.1-0013-g8fcece0df9" />
+  <Patch Id="DKxetBxQ5LLNqDvg7a4nWP">
+    <Canvas Id="BfIGVW6zuQrM1KA96toj0U" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="OGHixgXlCkBOaxcQ5xbmiM">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <CategoryReference Kind="Category" Name="Primitive" />
+      </p:NodeReference>
+      <Patch Id="Fhdss9ibktlMjJu4qtvWbb">
+        <Canvas Id="CUfIMsIxhaFOesCs4zo6A5" CanvasType="Group">
+          <Node Bounds="469,311,85,19" Id="E8vPmVunRxXPP7743yjXbF">
+            <p:NodeReference LastCategoryFullName="YARA" LastDependency="VL.Yara.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="Category" Name="YARA" />
+              <Choice Kind="ProcessAppFlag" Name="Scan" />
+            </p:NodeReference>
+            <Pin Id="JHS2ODpB30nOYa6MRRq7Kw" Name="Node Context" Kind="InputPin" IsHidden="true" />
+            <Pin Id="PFP057RapnZNRbtxsqHauz" Name="Rules File" Kind="InputPin" />
+            <Pin Id="MAEZqZbBNS2OItMAKhubIm" Name="Target" Kind="InputPin" />
+            <Pin Id="DYqtOqwKIC0OMtRbVocxwG" Name="Disable Warnings" Kind="InputPin" />
+            <Pin Id="UQ0uF1I9tJ0LlHre9SpwiH" Name="Print Strings" Kind="InputPin" />
+            <Pin Id="GLbEdEm6Zv5OfKbsy9HrTT" Name="Match" Kind="OutputPin" />
+            <Pin Id="M5ZYuU0UTWKPM6MZojqEY3" Name="Execute" Kind="InputPin" />
+            <Pin Id="OBwJQ72HFglPkZc2A2Lm5S" Name="On Match" Kind="OutputPin" IsHidden="true" />
+            <Pin Id="VvviGpGeMqbNRn0sg0MKjP" Name="Std Out" Kind="OutputPin" IsHidden="true" />
+            <Pin Id="KtsLWPUrXHxMlRR2Ngoeir" Name="Warning" Kind="OutputPin" />
+            <Pin Id="UfeuWLJdX2SNT7v7pQwIPE" Name="Error" Kind="OutputPin" />
+            <Pin Id="BeSPVMl8240O553j1UkisI" Name="Is Running" Kind="OutputPin" />
+            <Pin Id="EDiAwMR6tgNN8fIK3M75GH" Name="Builder" Kind="OutputPin" IsHidden="true" />
+          </Node>
+          <Pad Id="Dy1VH0SWt7XOBVBCWj0SAn" Comment="Rules File" Bounds="471,161,200,34" ShowValueBox="true" isIOBox="true">
+            <p:TypeAnnotation LastCategoryFullName="Collections" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="Spread" />
+              <p:TypeArguments>
+                <TypeReference LastCategoryFullName="IO" LastDependency="VL.CoreLib.vl">
+                  <Choice Kind="TypeFlag" Name="Path" />
+                </TypeReference>
+              </p:TypeArguments>
+            </p:TypeAnnotation>
+            <p:Value>
+              <Item>..\..\..\..\yara\rules\index.yar</Item>
+            </p:Value>
+          </Pad>
+          <Pad Id="Je3mUz3L70OMFaJw1oYfOW" Comment="Target" Bounds="491,211,140,15" ShowValueBox="true" isIOBox="true" Value="C:\Users\seb\Downloads\mal.exe">
+            <p:TypeAnnotation LastCategoryFullName="IO" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="Path" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="IFBfZpzYKMiLvwK0aQXcfN" Comment="Execute" Bounds="551,290,35,15" ShowValueBox="true" isIOBox="true" Value="false">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
+            </p:ValueBoxSettings>
+          </Pad>
+        </Canvas>
+        <Patch Id="GuLK6iKwDT9OiiYOA94rDo" Name="Create" />
+        <Patch Id="THqCPgtdX2oP49PL7Yt9XG" Name="Update" />
+        <ProcessDefinition Id="HMnOLrnD0wkOxqJx7G8iKV">
+          <Fragment Id="Im2dZEe06opOKFvLbKuXWh" Patch="GuLK6iKwDT9OiiYOA94rDo" Enabled="true" />
+          <Fragment Id="KUpv6IXQ7etNaGAL8K1Mx9" Patch="THqCPgtdX2oP49PL7Yt9XG" Enabled="true" />
+        </ProcessDefinition>
+        <Link Id="Nclfglcryh8PoXD2AJ4M8K" Ids="Dy1VH0SWt7XOBVBCWj0SAn,PFP057RapnZNRbtxsqHauz" />
+        <Link Id="HuNOuhZjzfePjHSkriUCsL" Ids="Je3mUz3L70OMFaJw1oYfOW,MAEZqZbBNS2OItMAKhubIm" />
+        <Link Id="RLlUupQZ8HSMyC69RQOEfz" Ids="IFBfZpzYKMiLvwK0aQXcfN,M5ZYuU0UTWKPM6MZojqEY3" />
+      </Patch>
+    </Node>
+  </Patch>
+  <NugetDependency Id="T2olSlO9HkfLQRBPvv9rLO" Location="VL.Yara" Version="0.0.0" />
+</Document>
